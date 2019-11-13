@@ -1,0 +1,10 @@
+#Capitalize first letter of every word
+s="a bad dog"
+a=""
+for i in range(len(s)):
+    if i==0 or s[i-1]==" ":
+        a+=s[i].upper()
+    else:
+        a+=s[i]
+    
+print(a)
