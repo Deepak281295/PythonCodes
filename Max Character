@@ -1,0 +1,18 @@
+#Max Char
+def mc(s):
+    d={}
+    for c in s:
+        if c in d:
+            d[c]+=1
+        else:
+            d[c]=1
+    max=0
+    c=""
+    for i in d.keys():
+        if d[i]>max:
+            max=d[i]
+            c=i
+    return c
+            
+mc("aaabbbbbbccccccc")
+        
