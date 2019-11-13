@@ -1,0 +1,12 @@
+# Binary Tree Validation
+def validate(node,min=None,max=None):
+    if (max!= None and node.data>max):
+        return False
+    if (min!= None and node.data<min):
+        return False
+    if (node.left and validate(node.left,min,node.data)==False):
+        return False
+    if (node.right and validate(node.right,node.data,max)==False):
+        return False
+    return True
+validate(a)
