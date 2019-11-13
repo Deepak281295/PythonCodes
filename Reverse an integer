@@ -1,0 +1,9 @@
+#reverse an integer
+def ri(n):
+    if(n<0):
+        s=str(abs(n))
+        return int(s[::-1])*-1
+    else:
+        s=str(abs(n))
+        return int(s[::-1])
+ri(-50)
