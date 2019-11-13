@@ -1,0 +1,48 @@
+#Spiral Matrix
+def sm(n):
+    j=0
+    l=[]
+    ll=[]
+    for i in range(n):
+        l=[]
+        for j in range(n):
+            l.append(0)
+        ll.append(l)
+    
+    sc=0
+    ec=n-1
+    sr=0
+    er=n-1
+    count=1
+    while(sc<=ec and sr<=er):
+        
+        #First row
+        for i in range(sc,ec+1):
+            ll[sr][i]=count
+            # arr[]=ll[sr][i]
+            count+=1
+        sr+=1
+
+        #Last column
+        for i in range(sr,er+1):
+            ll[i][ec]=count
+            count+=1
+        ec-=1
+
+        #Last row
+        for i in range(ec,sc-1,-1):
+            ll[er][i]=count
+            count+=1
+        er-=1
+
+        #First Column
+        for i in range(er,sr-1,-1):
+            ll[i][sc]=count
+            count+=1
+        sc+=1
+        
+        
+    
+    return (ll)
+        
+sm(5)
