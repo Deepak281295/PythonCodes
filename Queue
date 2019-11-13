@@ -1,0 +1,18 @@
+#Queue
+class queue:
+    def __init__(self):
+        self.data=[]
+        
+    def add(self,record):
+        self.data.insert(0,record)
+        
+    def remove(self):
+        return self.data.pop()
+    def disp(self):
+        print(self.data)
+    
+q=queue()
+q.add(10)
+q.add(11)
+q.disp()
+q.remove()
