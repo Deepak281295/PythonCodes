@@ -1,0 +1,44 @@
+#Tree
+class Node():
+    def __init__ (self,data):
+        self.data=data
+        self.children=[]
+    def add(self,data):
+        self.children.append(Node(data))
+        return self.children
+    def remove(self,data):
+        self.children=list(filter(lambda x:x.data!=data, self.children))
+        return self.children
+
+class Tree():
+    def __init__(self,root=None):
+        self.root=root
+    def traverseBF(self,fn):
+        arr=[self.root]
+        while len(arr):
+            node=arr.pop(0)
+            for i in node.children:
+                arr.append(i)
+            fn(node)
+    def traverseDF(self,fn):
+        arr=[self.root]
+        while len(arr):
+            node=arr.pop(0)
+            for i in range(len(node.children)):
+                arr.insert(i,node.children[i])
+            fn(node)
+def fn(node):
+    print(vars(node))
+        
+        
+
+t=Node(23)
+t.add(34)
+t.add(45)
+t.add(55)
+q=t.children[0]
+q.add(99)
+tr=Tree(t)
+tr.traverseDF(fn)
+
+        
