@@ -1,0 +1,12 @@
+#Chunk Array
+def ca(ls,size):
+    l=[]
+    ll=[]
+    for i in range(len(ls)):
+        l.append(ls[i])
+        if len(l)==size or i==len(ls)-1:
+            ll.append(l)
+            l=[]
+    return(ll)
+ca([1,2,3,4,5,6],4)
+    
