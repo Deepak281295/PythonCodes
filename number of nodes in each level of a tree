@@ -1,0 +1,17 @@
+#number of nodes in each level of a tree
+def levelwidth(root):
+    arr=[root,"s"]
+    count=[0]
+    while len(arr)>1:
+        node=arr.pop(0)
+        if node=="s":
+            count.append(0)
+            arr.append("s")
+        else:
+            for i in node.children:
+                arr.append(i)
+            count[len(count)-1]+=1
+    return count
+                
+levelwidth(t)
+ 
