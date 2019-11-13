@@ -1,0 +1,25 @@
+#Merge Sort
+import math
+def mergesort(list):
+    if (len(list)==1):
+        return list
+    midpoint=math.floor(len(list)/2)
+    left=list[0:midpoint]
+    right=list[midpoint:]
+    print(f"left={left}")
+    print(f"right={right}")
+    return merge(mergesort(left),mergesort(right))
+
+#Merge two sorted arrays
+def merge(left, right):
+    res=[]
+    while(len(left)>0 and len(right)>0):
+        if left[0]>right[0]:
+            res.append(right.pop(0))
+        else:
+            res.append(left.pop(0))
+    print (f"res={res+left+right}")
+    return(res+left+right)
+
+mergesort([1,5,2,7,9])
+
