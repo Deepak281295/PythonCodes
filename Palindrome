@@ -1,0 +1,6 @@
+#Palindrome
+def pali(s):
+    return s[:]==s[::-1]
+
+pali("abba")
+        
